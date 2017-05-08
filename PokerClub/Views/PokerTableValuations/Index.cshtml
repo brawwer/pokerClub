@@ -1,0 +1,157 @@
+﻿@model IEnumerable<PokerClub.Models.PokerTableValuation>
+@inject UserManager<ApplicationUser> UserManager
+@using Microsoft.AspNetCore.Authorization
+@inject IAuthorizationService AuthorizationService
+
+
+<div class="top">
+    <div class="customer">
+        <div class="game__date">
+            Mesa: @ViewData["PokerTableDate"]
+
+
+        </div>
+        <div class="budget__income clearfix">
+            <div class="budget__income--text">POT</div>
+            <div class="right">
+                <div class="total__pot--value">@ViewData["Pot"]</div>
+                <div class="budget__income--percentage">&nbsp;</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="row">
+@{if (User.IsInRole("Admin"))
+    {
+        await Html.RenderPartialAsync("Create", new PokerClub.Models.PokerTableValuation());
+    } 
+}
+</div>
+<div class="row bottom">
+    <div class="col-md-3">
+        <h2 class="buyin__title">BUY-INs</h2>
+        <table class="table">       
+            <tbody>
+            @foreach (var item in Model.Where(s => s.ValueCategory.Id == 1))
+            {
+                <tr>
+                    <td colspan="3">
+                        <div class="item clearfix">
+                            <div class="item__description">
+                                @UserManager.FindByIdAsync(item.MemberId).Result.Name
+                            </div>
+                            <div class="right clearfix">
+                                 <div class="item__value">
+                                      @item.Amount.ToString("C")
+                                </div>
+                                <div class="item__delete">
+                                 @{if (User.IsInRole("Admin"))
+                                     {
+                                        <a class="item__delete--btn" asp-action="Delete" asp-route-id="@item.Id"><i class="ion-ios-close-outline"></i></a>
+                                     }
+                                }
+                                </div>
+                        </div>
+                    </td>
+                </tr>
+                
+               
+            }
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-3">
+        <h2 class="rebuy__title">RE-BUYs</h2>
+        <table class="table">
+            <tbody>
+                @foreach (var item in Model.Where(s => s.ValueCategory.Id == 2))
+                {
+                    <tr>
+                        <td colspan="3">
+                            <div class="item clearfix">
+                                <div class="item__description">
+                                    @UserManager.FindByIdAsync(item.MemberId).Result.Name
+                                </div>
+                                <div class="right clearfix">
+                                    <div class="item__value">
+                                        @item.Amount.ToString("C")
+                                    </div>
+                                    <div class="item__delete">
+                                        @{if (User.IsInRole("Admin"))
+                                            {
+                                                <a class="item__delete--btn" asp-action="Delete" asp-route-id="@item.Id"><i class="ion-ios-close-outline"></i></a>
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-3">
+        <h2 class="addon__title">ADD-ONs</h2>
+        <table class="table">
+
+            <tbody>
+                @foreach (var item in Model.Where(s => s.ValueCategory.Id == 3))
+                {
+                    <tr>
+                        <td colspan="3">
+                            <div class="item clearfix">
+                                <div class="item__description">
+                                    @UserManager.FindByIdAsync(item.MemberId).Result.Name
+                                </div>
+                                <div class="right clearfix">
+                                    <div class="item__value">
+                                        @item.Amount.ToString("C")
+                                    </div>
+                                    <div class="item__delete">
+                                        @{if (User.IsInRole("Admin"))
+                                            {
+                                                <a class="item__delete--btn" asp-action="Delete" asp-route-id="@item.Id"><i class="ion-ios-close-outline"></i></a>
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-3">
+        <h2 class="premios__title">PREMIOS</h2>
+        <table class="table">
+            <tbody>
+                @foreach (var item in Model.Where(s => s.ValueCategory.Id == 4))
+                {
+                    <tr>
+                        <td colspan="3">
+                            <div class="item clearfix">
+                                <div class="item__description">
+                                    @UserManager.FindByIdAsync(item.MemberId).Result.Name
+                                </div>
+                                <div class="right clearfix">
+                                    <div class="item__value">
+                                        @item.Amount.ToString("C")
+                                    </div>
+                                    <div class="item__delete">
+                                        @{if (User.IsInRole("Admin"))
+                                            {
+                                                <a class="item__delete--btn" asp-action="Delete" asp-route-id="@item.Id"><i class="ion-ios-close-outline"></i></a>
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

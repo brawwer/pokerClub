@@ -1,0 +1,35 @@
+@model PokerClub.Models.PokerTable
+
+
+<form asp-action="Edit" style="margin-top: 70px">
+    <div class="form-horizontal">
+        <h4>PokerTable</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Id" />
+        <div class="form-group">
+            <label asp-for="Date" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Date" class="form-control date" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Host" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Host" class="form-control" />
+                <span asp-validation-for="Host" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group" style="margin-left: -200px">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="edit-btn" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

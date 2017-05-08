@@ -1,0 +1,16 @@
+﻿@model PokerClub.Models.PokerTableValuation
+
+<form asp-action="Create">
+        <div class="add">
+            <div class="add__container">
+                <select asp-for="ValueCategoryId" class="form-control add__type" asp-items="ViewBag.ValueCategoryId" placeholder="Tipo de compra"></select>
+                <select asp-for="MemberId" class="form-control add__member" asp-items="ViewBag.MemberId" placeholder="Escoge un jugador"></select>
+                <input asp-for="Amount" class="form-control add__value"  placeholder="Valor" />
+                <button type="submit" class="add__btn"><i class="ion-ios-checkmark-outline"></i></button>
+                <input type="hidden" asp-for="PokerTableId" value="@ViewContext.RouteData.Values["id"]"/>
+            </div>
+        </div>
+</form>
+
+
+

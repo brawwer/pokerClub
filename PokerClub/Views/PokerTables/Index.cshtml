@@ -1,0 +1,42 @@
+﻿@model IEnumerable<PokerClub.Models.PokerTable>
+
+
+<p style="margin-top: 100px;">
+    @{if (User.IsInRole("Admin"))
+        {
+            <div>
+                    <a href="/PokerTables/Create" class="create-new-link">Crear Nueva Mesa</a>
+            </div>
+        } }
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th style="color:#fff">
+                    <h1>Fechas: Mesas de Poker</h1>
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@{int counter = 1;
+    foreach (var item in Model)
+    {
+        <tr>
+            <td style="padding-top: 20px">
+                <a href="/PokerTableValuations/Index/@item.Id">
+                    Mesa @counter: @item.Date.ToString("MMMM") @item.Date.Day, @item.Date.Year - Host: @item.Host
+                </a>
+
+            </td>
+            <td style="padding-top: 20px">
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+            counter++;
+        }
+    }
+    </tbody>
+</table>
+

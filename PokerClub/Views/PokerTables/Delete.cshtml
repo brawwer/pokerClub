@@ -1,0 +1,27 @@
+@model PokerClub.Models.PokerTable
+
+
+
+<body style="margin-top: 70px">
+
+
+<div>
+    <h4 style="color: #fff">PokerTable</h4>
+    <hr />
+    <h3 style="color: #fff">Are you sure you want to delete this?</h3>
+    <dl class="dl-horizontal" style="color: #fff">
+        
+        Mesa: @Model.Date.ToString("MMMM") @Model.Date.Day, @Model.Date.Year - Host: @Model.Host
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+
+            <input asp-action="Delete" type="submit" value="Delete" class="delete-btn" style="margin-left: -10px" />
+        </form>
+        <div style="margin-top: 30px">
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </dl>
+    
+</div>
+</body>
+

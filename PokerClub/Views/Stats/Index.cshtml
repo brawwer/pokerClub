@@ -1,0 +1,57 @@
+@model IEnumerable<PokerClub.Models.StatsView>
+    
+
+
+<table class="table table-s" style="margin-top: 50px">
+    <thead>
+        <tr>
+            <th style="color:#fff" colspan="6">
+                <h1>Tabla de Posiciones</h1>
+            </th>
+        </tr>
+        <tr class="stats-tr">
+            <th>
+                MEMBER NAME
+            </th>
+            <th>
+                BUY-INs
+            </th>
+            <th>
+                RE-BUYs
+            </th>
+            <th>
+                ADD-ONs
+            </th>
+            <th>
+                PREMIOS
+            </th>
+            <th>
+                GANANCIA
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+            <tr class="stat-rows">
+                <td>
+                    @item.MemberName
+                </td>
+                <td>
+                    @item.TotalBuyin.ToString("C")
+                </td>
+                <td>
+                    @item.TotalRebuy.ToString("C")
+                </td>
+                <td>
+                    @item.TotalAddon.ToString("C")
+                </td>
+                <td>
+                    @item.TotalPrizes.ToString("C")
+                </td>
+                <td>
+                    @item.TotalNetAmt.ToString("C")
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

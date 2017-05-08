@@ -1,0 +1,623 @@
+﻿/**********************************************
+*** COMES WITH .NET
+**********************************************/
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input,
+select,
+textarea {
+    border-radius: 5px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* buttons and links extension to use brackets: [ click me ] */
+.btn-bracketed::before {
+    display: inline-block;
+    content: "[";
+    padding-right: 0.5em;
+}
+
+.btn-bracketed::after {
+    display: inline-block;
+    content: "]";
+    padding-left: 0.5em;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+
+/**********************************************
+*** LOGIN & REGISTER
+**********************************************/
+
+.login-form-fields {
+    font-size: 18px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 15px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+    border-radius: 5px;
+    display: block;
+    height: 50px;
+    width: 350px;
+    color: #050101;
+}
+
+
+.login-form-fields:last-child {
+    margin-bottom: 5px;
+}
+    
+.checkbox {
+    margin-left: 110px;
+    margin-bottom: 10px;
+}
+
+.reg-box {
+    margin-left: 220px;
+}
+.reg-field {
+    max-width: 350px;
+
+}
+
+
+/**********************************************
+*** GENERAL
+**********************************************/
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+body {
+    color: #555;
+    font-family: Open Sans;
+    font-size: 16px;
+    position: relative;
+    height: 100vh;
+    font-weight: 400;
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/poker-casino.jpeg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/poker-casino.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+
+
+h2 {
+    font-size: 200%;
+    margin: 28px auto;
+    text-align: center;
+}
+
+h4 {
+    font-size: 300%;
+    margin: 28px auto;
+    text-align: center;
+}
+
+.right {
+    float: right;
+}
+
+.red {
+    color: #FF5049 !important;
+}
+
+.red-focus:focus {
+    border: 1px solid #FF5049 !important;
+}
+
+
+.login-box {
+    height: 500px;
+    background-color: rgba(255, 255, 255, 0.75);
+    width: 450px;
+    margin: 5% auto;
+    padding: 2px;
+    position: relative;
+    border-radius: 20px;
+}
+
+.login-tools {
+    margin-left: 110px;
+}
+
+.form-horizontal {
+    color: #fff;
+}
+
+.new-proy-box {
+    height: 420px;
+    background-color: rgba(255, 255, 255, 0.75);
+    width: 70%;
+    margin: 10% auto;
+    padding: 2px;
+    position: relative;
+    border-radius: 20px;
+}
+
+.form-control {
+    max-width: 300px;
+}
+
+/**********************************************
+*** BUTTONS
+**********************************************/
+
+.login-btn {
+    display: inline-block;
+    padding: 10px 30px;
+    color: #050101;
+    font-weight: 600;
+    font-size: 18px;
+    font-family: inherit;
+    text-decoration: none;
+    border-radius: 200px;
+    margin-left: 160px;
+    margin-bottom: 0px;
+    -webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+.btn:hover,
+.login-btn:active,
+input[type=submit]:hover,
+input[type=submit]:active {
+    background-color: #757575;
+    color: #fff;
+}
+
+.edit-btn,
+input[type=submit]:active {
+
+    padding: 10px 20px;
+    color: #050101;
+    font-weight: 600;
+    font-size: 15px;
+    font-family: inherit;
+    text-decoration: none;
+    border-radius: 200px;
+    margin-left: 160px;
+    border-color: #fff;
+    margin-bottom: 0px;
+    -webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+.delete-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #050101;
+    font-weight: 600;
+    font-size: 15px;
+    font-family: inherit;
+    text-decoration: none;
+    border-radius: 200px;
+    margin-left: 160px;
+    margin-top: 25px;
+    -webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+.delete-btn:hover,
+.delete-btn:active,
+input[type=submit]:hover,
+input[type=submit]:active {
+    background-color: #757575;
+    color: #fff;
+}
+
+.create-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #050101;
+    font-weight: 600;
+    font-size: 15px;
+    font-family: inherit;
+    text-decoration: none;
+    border-radius: 200px;
+    margin-left: 160px;
+    margin-top: 25px;
+    -webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+.create:hover,
+.create-btn:active,
+input[type=submit]:hover,
+input[type=submit]:active {
+    background-color: #757575;
+    color: #fff;
+}
+
+
+.btn-menu:link,
+.btn-menu:visited {
+    border-radius: 5px;
+    width: 80%;
+    background-color: #050101;
+    border: 1px solid #050101;
+    color: #fff;
+    margin: 2px;
+    margin-left: 10%;
+    position: relative;
+    text-align: center;
+}
+
+.btn-logout {
+    border-radius: 200px;
+}
+
+.btn-logout:hover,
+.btn-logout:active {
+    border-radius: 200px;
+    text-decoration: none;
+    background-color: #757575;
+}
+
+
+
+.btn-full:hover,
+.btn-full:active {
+    border: 1px solid #d10901;
+}
+
+
+
+/**********************************************
+*** GENERAL
+**********************************************/
+
+
+.right {
+    float: right;
+}
+
+.red {
+    color: #FF5049 !important;
+}
+
+.red-focus:focus {
+    border: 1px solid #FF5049 !important;
+}
+
+.stats-tr {
+    color: #fff;
+    padding-top: 10px;
+    padding-bottom: 5px;
+
+}
+
+.stat-rows {
+    color: #28B9B5;
+
+}
+/**********************************************
+*** TOP PART
+**********************************************/
+
+.top {
+    height: 50vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.81), rgba(0, 0, 0, 0.35)), url(/resources/css/img/poker-casino.jpeg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+
+
+.customer {
+    position: absolute;
+    font-size: 18px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.customer__name {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.game__date {
+    font-weight: 100;
+    font-size: 46px;
+    width: 800px;
+    margin-left: 50px;
+    text-align: center;
+    align-ent: center;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+.budget__income {
+    padding: 12px;
+    margin-bottom: 10px;
+    background-color: rgba(5, 1, 8, 0.7);
+    width: 300px;
+    margin-left: 34%;
+    border-radius: 5px;
+    border: 1px solid #fff;
+}
+
+.prizes {
+    width: 1000px;
+}
+
+.prize-input-fields {
+    width: 200px;
+    border: 1px solid #e7e7e7;
+    border-radius: 5px;
+    height: 44px;
+    font-size: 18px;
+    text-align: center;
+    color: #080000;
+    background-color: #fff;
+    margin-right: 1px;
+    font-weight: 300;
+    transition: border 0.3s;
+}
+
+    .prize-input-fields:first-child {
+        margin-left: 90px;
+    }
+
+.budget__income--text {
+    float: left;
+    text-align: center;
+    font-size: 40px;
+    color: #fff;
+    margin-top: 2px;
+    font-family: Open Sans;
+}
+
+.total__pot--value {
+    letter-spacing: 1px;
+    float: right;
+    margin-top: 6px;
+    font-size: 40px;
+}
+
+.budget__income--percentage {
+    float: left;
+    width: 34px;
+    font-size: 11px;
+    padding: 3px 0;
+    margin-left: 10px;
+}
+
+
+/**********************************************
+*** BOTTOM PART
+**********************************************/
+
+.bottom {
+    background-color: #e7e7e7;
+
+}
+/***** FORM *****/
+.add {
+    padding: 14px;
+    border-bottom: 1px solid #e7e7e7;
+    background-color: rgba(221, 199, 199, 0.00);
+}
+
+.add__container {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.add__type {
+    float: left;
+    max-width: 100px;
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 390px;
+}
+
+.add__member {
+    float: left;
+    max-width: 200px;
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.add__value {
+    float: left;
+    max-width: 100px;
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+
+.add__btn {
+    font-size: 35px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.1;
+    margin-left: -260px;
+}
+
+
+/*
+.add__type:focus,
+.add__value:focus,
+.add__member:focus,
+.add__btn:focus {
+    outline: none;
+    border: 1px solid #050108;
+}
+*/
+
+/* {  } */
+
+/*****VALUATION LISTS *****/
+
+
+.buyin {
+    float: left;
+    width: 350px;
+    margin-right: 50px;
+}
+
+.addon {
+    float: left;
+    width: 350px;
+    margin-right: 50px;
+}
+
+.premio {
+    float: left;
+    width: 350px;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.buyin__title {
+    color: #f56a04;
+}
+
+.rebuy__title {
+    color: #f56a04;
+}
+
+.addon__title {
+    color: #f82c24;
+}
+
+.premios__title {
+    color: #28B9B5;
+}
+
+.item {
+    border-bottom: 1px solid #e7e7e7;
+}
+
+    .item:first-child {
+        border-top: 1px solid #e7e7e7;
+    }
+
+    .item:nth-child(even) {
+        background-color: #f7f7f7;
+    }
+
+.item__description {
+    float: left;
+}
+
+.item__value {
+    float: left;
+    transition: transform 0.3s;
+}
+
+.item__percentage {
+    float: left;
+    margin-left: 20px;
+    transition: transform 0.3s;
+    font-size: 11px;
+    background-color: #fff;
+    padding: 3px;
+    border-radius: 3px;
+    width: 32px;
+    text-align: center;
+}-
+
+.income .item__value,
+.income .item__delete--btn {
+    color: #f56a04;
+}
+
+.rebuy .item__value,
+.rebuy .item__percentage,
+.rebuy .item__delete--btn {
+    color: #f82c24;
+}
+
+.prizes .item__value,
+.prizes .item__percentage,
+.prizes .item__delete--btn {
+    color: #28B9B5;
+}
+
+
+.item__delete {
+    float: left;
+}
+
+.item__delete--btn {
+    font-size: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+    display: none;
+    margin-right: -10px;
+}
+
+.item__delete--btn:focus {
+    outline: none;
+}
+
+.item__delete--btn:active {
+    transform: translateY(2px);
+}
+
+.item:hover 
+.item__delete--btn {
+    display: block;
+    text-decoration: none;
+}
+
+.item:hover 
+.item__value {
+    transform: translateX(-5px);
+}
+
+.item:hover .item__percentage {
+    transform: translateX(-20px);
+}
+

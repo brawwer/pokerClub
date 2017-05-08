@@ -1,0 +1,67 @@
+@model PokerClub.Models.PokerTable
+
+
+
+<form asp-action="Create" style="margin-top: 70px">
+    <div class="form-horizontal">
+        <h4>Create new PokerTable</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+  <!--        <div class="form-group">
+            <label asp-for="Date" class="col-md-2 control-label"></label>
+            <div class="col-md-10" style="margin-bottom: 10px">
+                <input asp-for="Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+        </div>
+      <div class="form-group">
+            <label asp-for="Date" class="col-md-2 control-label"></label>
+            <div class="col-md-3" style="margin-bottom: 10px">
+                <div class="input-group date" data-provide="datepicker">
+                    <input type="text" class="form-control">
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>   -->
+        <div class="bootstrap-iso">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12" style="margin-left: 100px">
+
+                        <!-- Form code begins -->
+                        
+                            <div class="form-group">
+                                <!-- Date input -->
+                                <label asp-for="Date" class="col-md-2 control-label"></label>
+                                <input class="form-control" id="date" name="date" placeholder="DD/MM/YYY" type="text" required/>
+                            </div>
+                       
+                        <!-- Form code ends -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group" style="margin-left: 5px">
+                <label asp-for="Host" class="col-md-2 control-label"></label>
+                
+                    <select asp-for="Host" asp-items="ViewBag.MemberId" class="form-control" required></select>
+                    <span asp-validation-for="Host" class="text-danger"></span>
+           
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input asp-action="Create" type="submit" value="Create" class="create-btn" style="margin-left: -5px" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index" style="margin-left: 70px">Back to List</a>
+</div>
+
