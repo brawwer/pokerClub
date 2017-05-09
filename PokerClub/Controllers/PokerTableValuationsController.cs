@@ -75,7 +75,9 @@ namespace PokerClub.Controllers
                 await _context.SaveChangesAsync();
                 
             }
-            return RedirectToAction("Index/" + pokerTableValuation.PokerTableId);
+            return RedirectToAction("Index", new { id = pokerTableValuation.PokerTableId });
+            
+            //return RedirectToAction("Index/" + pokerTableValuation.PokerTableId);
         }
     
 
@@ -85,7 +87,7 @@ namespace PokerClub.Controllers
             var pokerTableValuation = await _context.PokerTableValuations.SingleOrDefaultAsync(m => m.Id == id);
             _context.PokerTableValuations.Remove(pokerTableValuation);
             await _context.SaveChangesAsync();
-            return RedirectToAction("Index/" + pokerTableValuation.PokerTableId);
+            return RedirectToAction("Index", new { id = pokerTableValuation.PokerTableId });
         }
 
         private bool PokerTableValuationExists(int id)
