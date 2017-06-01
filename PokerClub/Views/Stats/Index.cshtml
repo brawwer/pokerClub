@@ -1,4 +1,5 @@
-@model IEnumerable<PokerClub.Models.StatsView>
+@using System.Collections.Generic
+@model System.Collections.Generic.IEnumerable<PokerClub.Models.StatsView>
     
 
 
@@ -12,6 +13,12 @@
         <tr class="stats-tr">
             <th>
                 MEMBER NAME
+            </th>
+            <th>
+                PJ
+            </th>
+            <th>
+                PJ%
             </th>
             <th>
                 BUY-INs
@@ -32,9 +39,87 @@
     </thead>
     <tbody>
         @foreach (var item in Model) {
+            if (item.ParticipationPercentage > 50)
+            {
+                <tr class="stat-rows">
+                    <td>
+                        @item.MemberName
+                    </td>
+                    <td>
+                        @item.TotalGamesPlayed
+                    </td>
+                    <td>
+                        @item.ParticipationPercentage %
+                    </td>
+                    <td>
+                        @item.TotalBuyin.ToString("C")
+                    </td>
+                    <td>
+                        @item.TotalRebuy.ToString("C")
+                    </td>
+                    <td>
+                        @item.TotalAddon.ToString("C")
+                    </td>
+                    <td>
+                        @item.TotalPrizes.ToString("C")
+                    </td>
+                    <td>
+                        @item.TotalNetAmt.ToString("C")
+                    </td>
+                </tr>  
+            }
+            
+        }
+    </tbody>
+</table>
+
+<table class="table table-s" style="margin-top: 50px">
+    <thead>
+    <tr>
+        <th style="color:#fff" colspan="6">
+            <h1>Liga B</h1>
+        </th>
+    </tr>
+    <tr class="stats-tr">
+        <th>
+            MEMBER NAME
+        </th>
+        <th>
+            PJ
+        </th>
+        <th>
+            PJ%
+        </th>
+        <th>
+            BUY-INs
+        </th>
+        <th>
+            RE-BUYs
+        </th>
+        <th>
+            ADD-ONs
+        </th>
+        <th>
+            PREMIOS
+        </th>
+        <th>
+            GANANCIA
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model) {
+        if (item.ParticipationPercentage <= 50)
+        {
             <tr class="stat-rows">
                 <td>
                     @item.MemberName
+                </td>
+                <td>
+                    @item.TotalGamesPlayed
+                </td>
+                <td>
+                    @item.ParticipationPercentage %
                 </td>
                 <td>
                     @item.TotalBuyin.ToString("C")
@@ -51,7 +136,8 @@
                 <td>
                     @item.TotalNetAmt.ToString("C")
                 </td>
-            </tr>
+            </tr>  
         }
+    }
     </tbody>
 </table>

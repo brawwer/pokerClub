@@ -8,6 +8,8 @@ namespace PokerClub.Models
     public class StatsView
     {
         public string MemberName { get; set; }
+        public int TotalGamesPlayed { get; set; }
+        public double ParticipationPercentage { get; set; }
         public double TotalBuyin { get; set; }
         public double TotalRebuy { get; set; }
         public double TotalAddon { get; set; }

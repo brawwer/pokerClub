@@ -34,6 +34,11 @@ namespace PokerClub.Controllers
             {
                 StatsView statsView = new StatsView();
                 statsView.MemberName = member.Name;
+                statsView.TotalGamesPlayed = pokerTableValuations.ToList()
+                    .Where(x => x.MemberId == member.Id)
+                    .Select(z => z.PokerTableId).Distinct().Count();
+                statsView.ParticipationPercentage = ((double)statsView.TotalGamesPlayed / pokerTableValuations.ToList()
+                                                         .Select(z => z.PokerTableId).Distinct().Count())*100;
                 statsView.TotalBuyin = pokerTableValuations.ToList()
                     .Where(x => x.MemberId == member.Id)
                     .Where(y => y.ValueCategoryId == 1)
