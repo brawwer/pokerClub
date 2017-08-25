@@ -39,7 +39,7 @@
     </thead>
     <tbody>
         @foreach (var item in Model) {
-            if (item.ParticipationPercentage > 50)
+            if (item.ParticipationPercentage >= 50)
             {
                 <tr class="stat-rows">
                     <td>
@@ -109,7 +109,7 @@
     </thead>
     <tbody>
     @foreach (var item in Model) {
-        if (item.ParticipationPercentage <= 50)
+        if (item.ParticipationPercentage < 50)
         {
             <tr class="stat-rows">
                 <td>
